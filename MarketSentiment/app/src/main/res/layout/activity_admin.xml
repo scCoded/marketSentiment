@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="80dp"
+        android:text="Username   |   Password           |   Type       |   TestTaken    |   Score"
+        android:textSize="10sp" />
+
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="410dp">
+
+
+        <ListView
+            android:id="@+id/ListViewDb"
+            android:layout_width="349dp"
+            android:layout_height="478dp"
+            android:paddingTop="100dp">
+
+        </ListView>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:background="#3F51B5"
+        android:text="Reset Users Details" />
+
+    <Button
+        android:id="@+id/logoutButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="#3F51B5"
+        android:text="Admin - Logout" />
+
+    <TextView
+        android:id="@+id/resetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameEditText2"
+        android:paddingBottom="30dp"
+        android:text="Admin Reset"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/usernameEditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@id/resetButton"
+        android:hint="Enter Username"
+        android:paddingRight="50dp"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/passwordEditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/resetButton"
+        android:layout_alignParentRight="true"
+        android:hint="Enter Password"
+        android:paddingRight="50dp"
+        android:text="" />
+
+
+</RelativeLayout>

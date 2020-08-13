@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".QuizActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/textViewQuestionNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question: 1 / 10"
+                android:textColor="@android:color/black"/>
+
+
+            <TextView
+                android:id="@+id/textViewTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="30"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+            <TextView android:id="@+id/textViewHeadline"
+                android:text="This is the headline."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewQuestionNumber"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
+
+            <TextView android:id="@+id/textViewQuestionA"
+                android:text="Select the asset will be most impacted by this news."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewHeadline"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+
+            <RadioGroup android:id="@+id/radioGroup1"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/textViewQuestionA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/radioButton1"
+                    android:hint="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/radioGroup1"
+                    android:layout_alignStart="@+id/radioGroup1"
+                    android:layout_alignLeft="@+id/radioGroup1"
+                    android:text="Oil"/>
+
+                <RadioButton android:id="@+id/radioButton2"
+                    android:hint="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S/P 500"/>
+
+                <RadioButton android:id="@+id/radioButton3"
+                    android:hint="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nasdaq"/>
+
+                <RadioButton android:id="@+id/radioButton4"
+                    android:hint="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FTSE 100"/>
+
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="4"
+                    android:text="DAX" />
+
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="4"
+                    android:text="Gold" />
+            </RadioGroup>
+
+
+
+            <TextView android:id="@+id/textViewQuestionB"
+                android:text="Select how much dramatically the asset price will move."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGroup1"
+                android:layout_marginTop="40dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"/>
+
+
+
+            <RadioGroup android:id="@+id/radioGroup2"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/textViewQuestionB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton android:id="@+id/radioButton7"
+                    android:hint="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/radioGroup2"
+                    android:layout_alignStart="@+id/radioGroup2"
+                    android:layout_alignLeft="@+id/radioGroup2"
+                    android:text="Up (A lot)"/>
+
+                <RadioButton android:id="@+id/radioButton8"
+                    android:hint="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Up (A little)"/>
+
+                <RadioButton android:id="@+id/radioButton9"
+                    android:hint="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Down (A lot)"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="10"
+                    android:text="Down (A little)" />
+
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/buttonConfirm2"
+                android:layout_width="140dp"
+                android:layout_height="73dp"
+                android:layout_below="@id/radioGroup2"
+                android:layout_marginStart="139dp"
+                android:layout_marginLeft="139dp"
+                android:layout_marginTop="-55dp"
+                android:text="Confirm" />
+
+            <Button
+                android:id="@+id/buttonFinish"
+                android:layout_width="140dp"
+                android:layout_height="73dp"
+                android:layout_below="@id/radioGroup2"
+                android:layout_marginStart="139dp"
+                android:layout_marginLeft="139dp"
+                android:layout_marginTop="-55dp"
+                android:text="Finish"
+                android:visibility="invisible"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@drawable/gradient"
+    android:weightSum="500"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewUsername"
+        android:layout_weight="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_weight="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewType"
+        android:layout_weight="100"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewTestTaken"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:text="TextView" />
+</LinearLayout>
