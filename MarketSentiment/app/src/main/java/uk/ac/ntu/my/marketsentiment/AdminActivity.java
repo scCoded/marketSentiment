@@ -22,34 +22,26 @@ public class AdminActivity extends AppCompatActivity {
     User user, userToUpdate;
     private EditText usernameBox, passwordBox;
 
+    Cursor c;
+    int row_amount;
+
+    FiveColumnListAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
         dbHelper = new QuizDbHelper(this);
-        userList = new ArrayList<>();
-        Cursor c = dbHelper.getUserData();
-        int row_amount = c.getCount();
+
 
         usernameBox = findViewById(R.id.usernameEditText2);
         passwordBox = findViewById(R.id.passwordEditText2);
 
 
-        if(row_amount == 0){
-            Toast.makeText(getBaseContext(), "No Users Found - Empty Database", Toast.LENGTH_SHORT).show();
-        }
+        loadTable();
 
-        else{
 
-            while(c.moveToNext()){
-                user = new User(c.getString(1), c.getString(2), c.getString(3), c.getInt(4),c.getInt(5));
-                userList.add(user);
-            }
-            FiveColumnListAdapter adapter = new FiveColumnListAdapter(this,R.layout.list_adapter, userList);
-            listView = (ListView) findViewById(R.id.ListViewDb);
-            listView.setAdapter(adapter);
-        }
 
 
 
@@ -74,6 +66,29 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
+    public void loadTable(){
+
+        userList = new ArrayList<>();
+        c = dbHelper.getUserData();
+        row_amount = c.getCount();
+
+
+        if(row_amount == 0){
+            Toast.makeText(getBaseContext(), "No Users Found - Empty Database", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+
+            while(c.moveToNext()){
+                user = new User(c.getString(1), c.getString(2), c.getString(3), c.getInt(4),c.getInt(5));
+                userList.add(user);
+            }
+            adapter = new FiveColumnListAdapter(this,R.layout.list_adapter, userList);
+            listView = (ListView) findViewById(R.id.ListViewDb);
+            listView.setAdapter(adapter);
+        }
+    }
+
     private void resetDetails(){
 
         String username = usernameBox.getText().toString();
@@ -96,6 +111,10 @@ public class AdminActivity extends AppCompatActivity {
             dbHelper.updateScore(userToUpdate,index);
 
             Toast.makeText(getBaseContext(), "Updated user: "+ username, Toast.LENGTH_SHORT).show();
+
+            adapter.clear();
+            adapter.notifyDataSetChanged();
+            loadTable();
 
         }
 
